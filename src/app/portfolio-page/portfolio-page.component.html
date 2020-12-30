@@ -1,0 +1,6 @@
+<h3 style="text-align: center;">Porfolio</h3>
+<ul class="projects">
+    <li (click)="onSelect(item)" [class.selected]="isSelected(item)" *ngFor="let item of portfolioItems">
+        <span>{{item.id}}}</span>{{item.title}}
+    </li>
+</ul>

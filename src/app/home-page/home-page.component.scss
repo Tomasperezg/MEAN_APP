@@ -1,0 +1,86 @@
+.Hero-Image{
+    text-align: center;
+}
+.Hero-Image img{
+    height: 610px;
+    width: 1240px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.About-Company{
+    text-align: center;
+    padding-top: 20px;
+}
+.title{
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
+.Sub-title{
+    font-size: 25px;
+    font-family: 'Playfair Display', serif;
+}
+.Button-Class{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.Button-Class button{
+    width: 160px;
+    height: 50px;
+    background: #2c2c2c;
+    border-radius: 40px;
+    font-size: 20px;
+    font-family: 'Noto Serif', serif;
+    a{
+        color: white;
+    }
+}
+.Button-Class button:hover{
+    background-color: white;
+    border-color: #2c2c2c;
+    a{
+        color: black;
+    }
+}
+.carousel-list img{
+    width: 350px;
+    height: 240px;
+    margin: 10px;
+}
+.carousel-list li{
+    list-style-type: none;
+
+} 
+.carousel-list{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.carousel-title{
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin-top: 0px;
+    font-size: 20px;
+}
+.carousel-content{
+    font-size: 19px;
+    width: 340px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0px;
+}
+.carousel-link{
+    color: black;
+    font-size: 18px;
+    text-decoration: underline;
+    margin-top: 0;
+}
+.carousel-linktxt{
+    margin-top: 15px;
+    padding-left: 10px;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+  }

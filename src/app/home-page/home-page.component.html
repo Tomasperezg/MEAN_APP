@@ -1,0 +1,24 @@
+<div class="Hero-Image">
+    <img src="assets/Images/HomeHero.jpg" alt="hero image">
+</div>
+
+<div class="About-Company">
+    <strong><p class="title">About Black Bird Homes:</p></strong>
+    <p class="Sub-title">Blackbird Homes is a small, home renovation company.</p>
+</div>
+<div class="Button-Class">
+    <button><a routerLink='/about-us'>Learn More</a></button>
+</div>
+
+<div image-carousel>
+    <ul class="carousel-list">
+        <li *ngFor='let image of images'>
+            <img src="{{image.src}}" alt="{{image.alt}}">
+            <strong><p class="carousel-title">{{image.txt}}</p></strong>
+            <p class="carousel-content">{{image.content}}</p>
+            <a class="carousel-link" routerLink="{{image.linkurl}}">
+                <p class="carousel-linktxt">{{image.linktxt}} &#8594;</p>
+            </a>
+        </li>
+    </ul>
+</div>

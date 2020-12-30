@@ -1,0 +1,50 @@
+<div class="Nav-Logo">
+  <img src="assets/Images/logo.jpg" alt="Black Bird Homes Logo">
+</div>
+<nav>
+  <ul>
+    <li>
+        <a routerLink='home' routerLinkActive='active'>Home |</a>
+    </li>
+    <li>
+        <a routerLink='/about-us' routerLinkActive='active'>About Us |</a>
+    </li>
+    <li>
+        <a routerLink='/contact-us' routerLinkActive='active'>Contact Us |</a>
+    </li>
+    <li>
+        <a routerLink='/portfolio-list' routerLinkActive='active'>Portfolio</a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+<div class="footer">
+    <div *ngIf="errorMsg" class="success-msg">
+        Something went wrong.<br/> 
+        Please try again.
+    </div>
+    <form #userSignUp="ngForm" *ngIf="!submitted" class="subscriber" (ngSubmit)="onSubmit()" novalidate>
+        <!-- {{userSignUp.form.valid}} -->
+        <strong><p class="subs-title">Sign up to our news letter and stay up to date.</p></strong>
+        <!-- Two way binding can be done by adding [()] to the ngmodal -->
+        <input placeholder="Email*" class="email_box" type="text" required name="userEmail" #userEmail="ngModel" [class.error]="userEmail.invalid && userEmail.touched" [(ngModel)]="userModel.userEmail">
+        <p [class.error-msg]="userEmail.invalid && userEmail.touched" [class.error-msg2]="userEmail.valid || userEmail.untouched">Email is required</p>
+        <div class="Button-Class">
+              <button [disabled]="userSignUp.form.invalid">Sign Up</button>
+        </div>
+    </form>
+    <p *ngIf="submitted && !errorMsg" class="success-msg">
+        Thank you for enrolling to our newsletter!
+    </p>
+    <div class="divisioner">
+    </div>
+    <div class="social">
+        <strong><p class="soc-title">Follow us on Social Media</p></strong>
+        <div class="soc-tiles">
+            <ul class="soc-tiles-ul">
+                <li *ngFor='let tile of socTiles'>
+                    <a href="{{tile.url}}"><img src="{{tile.src}}" alt="{{tile.alt}}"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
