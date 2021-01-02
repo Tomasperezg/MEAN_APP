@@ -7,7 +7,7 @@ const data = require('./data')
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({origin: "*"}));
+app.use(cors());
 
 app.listen(3000, () => {
     console.log('Server running port 3000');
@@ -18,7 +18,7 @@ app.post('/enroll', function(req, res){
     console.log(req.body);
     console.log(req.body.userEmail)
     res.status(200).send({"message": "Data received"});
-    data.saveData(req.body);
+    data.getData(req.body.userEmail)
 })
 
 app.post('/form', function(req, res){
