@@ -27,7 +27,7 @@
         <!-- {{userSignUp.form.valid}} -->
         <strong><p class="subs-title">Sign up to our news letter and stay up to date.</p></strong>
         <!-- Two way binding can be done by adding [()] to the ngmodal -->
-        <input placeholder="Email*" class="email_box" type="text" required name="userEmail" #userEmail="ngModel" [class.error]="userEmail.invalid && userEmail.touched" [(ngModel)]="userModel.userEmail">
+        <input placeholder="Email*" class="email_box" type="email" required name="userEmail" #userEmail="ngModel" [class.error]="userEmail.invalid && userEmail.touched" [(ngModel)]="userModel.userEmail" email="true">
         <p [class.error-msg]="userEmail.invalid && userEmail.touched" [class.error-msg2]="userEmail.valid || userEmail.untouched">Email is required</p>
         <div class="Button-Class">
               <button [disabled]="userSignUp.form.invalid">Sign Up</button>

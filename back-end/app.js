@@ -1,32 +1,31 @@
-const http = require('http');
-const cors = require('cors');
-const bodyParser = require('body-parser');
 const express = require('express');
-const data = require('./data')
-
+require('./db/mongoose')
+const User = require('./model/user')
+const cors = require('cors')
 
 const app = express();
-app.use(bodyParser.json());
-app.use(cors());
+const port = process.env.PORT || 8000
+app.use(express.json())
+app.use(cors())
 
-app.listen(3000, () => {
-    console.log('Server running port 3000');
+
+app.post('/enroll', (req, res) => {
+
+    const user = new User(req.body)
+
+    user.save().then(() => {
+        res.status(200).send(user)
+    }).catch((e) => {
+        res.status(400).send(e)
+    })
 })
 
-
-app.post('/enroll', function(req, res){
-    console.log(req.body);
-    console.log(req.body.userEmail)
-    res.status(200).send({"message": "Data received"});
-    data.getData(req.body.userEmail)
-})
-
-app.post('/form', function(req, res){
-    console.log(req.body);
-    res.status(200).send({"message": "Form received"});
-})
+// app.post('/form', function(req, res){
+//     console.log(req.body);
+//     res.status(200).send({"message": "Form received"});
+// })
 
 
-app.get('/', (req, res) => {
-    res.send("This Server is running in PORT 3000");
+app.listen(port, () => {
+    console.log('Server running port: ' + port);
 })
