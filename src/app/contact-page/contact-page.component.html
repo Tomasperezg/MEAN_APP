@@ -1,18 +1,62 @@
 <div class="contact-hro">
     <img src="assets/Images/Hero_2.jpg" alt="living room image" />
     <div class="contact-hro-txt">
-        <p style="font-size: 35px; font-weight: 700; margin-bottom: 0px;">Tell us,</p>
-        <p style="font-size: 25px;">What's in your mind?..</p>
-        <p style="width: 300px;">
+        <p *ngIf="!error" style="font-size: 35px; font-weight: 700; margin-bottom: 0px;">Tell us,</p>
+        <p *ngIf="!error" style="font-size: 25px;">How can we help?..</p>
+        <!-- <p style="width: 300px;">
             Duis aute irure dolor in 
             reprehenderit in voluptate 
             velit esse cillum dolore eu 
             fugiat nulla pariatur
         </p>
-        <p><a routerLink="/about-us" style="color: #2c2c2c;text-decoration: underline;">Learn more about us →</a></p>
+        <p><a routerLink="/about-us" style="color: #2c2c2c;text-decoration: underline;">Learn more about us →</a></p> -->
+        <div class="form-container">
+                <div class="container">
+                    <div class="errorRes" *ngIf="error">
+                        503 Service Unavailable<br/>
+                        Please try again later
+                    </div>
+                    <form #userMessageForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted" novalidate>
+            
+                        <input  placeholder="Name*" class="large_input" [(ngModel)]="userMessageModel.name" [class.form-err]="name.invalid && name.touched" required name="name" #name="ngModel">
+                        <br/>
+                        <small  [class.d-none]="name.valid || name.untouched">Name is required</small>
+            
+                        <input placeholder="Email*" #email="ngModel" class="large_input" [class.form-err]="email.invalid && email.touched" [(ngModel)]="userMessageModel.messageEmail" required name="messageEmail">
+                        <br/>
+                        <small  [class.d-none]="email.valid || email.untouched">Email is required</small>
+            
+                        <input type="tel" #phone="ngModel" pattern="^\d{10}$" placeholder="Phone Number*" [class.form-err]="phone.invalid && phone.touched" class="large_input" [(ngModel)]="userMessageModel.messagePhone" required name="messagePhone">
+                        <br/>
+                        <small  [class.d-none]="phone.valid || phone.untouched">Phone Number must be 10 digits</small>
+            
+                        <input placeholder="Subject*" #subject="ngModel" required [class.form-err]="subject.invalid && subject.touched" class="large_input" name="messageSubject" [(ngModel)]="userMessageModel.messageSubject">
+                        <br/>
+                        <small  [class.d-none]="subject.valid || subject.untouched">Subject is required</small>
+            
+                        <textarea placeholder="Message*" name="messageBody" [(ngModel)]="userMessageModel.messageBody" #message="ngModel" required [class.form-err-box]="message.invalid && message.touched"></textarea>
+                        <br/>
+                        <small  [class.d-none]="message.valid || message.untouched">Message is required</small>
+            
+                        <textarea placeholder="tell us, how did you hear about us?" name="messageMore" [(ngModel)]="userMessageModel.messageMore"></textarea>
+            
+                        <div class="Button-Class">
+                            <button [disabled]="userMessageForm.invalid" type="submit">Send</button>
+                            <div *ngIf="userMessageForm.invalid && userMessageForm.touched">
+                                <p class="submit-button-valid">Please enter the missing information</p>
+                            </div>
+                        </div>
+                    </form>
+                    <p *ngIf="submitted && !error" class="success-msg">
+                        <img src="assets/Images/blackbird_message.png">
+                        <br/>
+                        Thank you for your message, we'll reach out soon!
+                    </p>
+                </div>
+            </div>
     </div>
 </div>
-<div class="form-container">
+<!-- <div class="form-container">
     <div class="container">
         <div class="errorRes" *ngIf="error">
             Something went wrong!!! Please, try again.
@@ -27,17 +71,6 @@
 
             <input type="tel" #phone="ngModel" pattern="^\d{10}$" placeholder="Phone Number*" [class.form-err]="phone.invalid && phone.touched" class="large_input" [(ngModel)]="userMessageModel.messagePhone" required name="messagePhone">
             <small  [class.d-none]="phone.valid || phone.untouched">Phone Number must be 10 digits</small>
-
-            <!-- <div class="radios">
-                Are you looking to improve your home: 
-                <input type="radio" name="option1" value="Yes" style="margin-left: 25px;" [(ngModel)]="userMessageModel.option1"> Yes
-                <input type="radio" name="option1" value="No" [(ngModel)]="userMessageModel.option1"> No
-            </div>
-            <div class="radios">
-                Are you looking for a new home: 
-                <input type="radio" name="option2" value="Yes" style="margin-left: 25px;" [(ngModel)]="userMessageModel.option2"> Yes
-                <input type="radio" name="option2" value="No" [(ngModel)]="userMessageModel.option2"> No
-            </div> -->
 
             <input placeholder="Subject*" #subject="ngModel" required [class.form-err]="subject.invalid && subject.touched" class="large_input" name="messageSubject" [(ngModel)]="userMessageModel.messageSubject">
             <small  [class.d-none]="subject.valid || subject.untouched">Subject is required</small>
@@ -60,4 +93,4 @@
             Thank you for your message, we'll reach out soon!
         </p>
     </div>
-</div>
+</div> -->

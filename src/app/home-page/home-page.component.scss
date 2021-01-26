@@ -84,3 +84,26 @@ a {
     color: black;
     font-family: 'Times New Roman', Times, serif;
   }
+
+// Tablet Breakpoint:
+@media (min-width: 600px) and (max-width: 1024px){ 
+    .Hero-Image img{
+        width: 100%;
+    }
+    .carousel-list img{
+        width: 220px;
+        height: 140px;
+        margin: 10px;
+    }
+    .carousel-content{
+        font-size: 19px;
+        width: 220px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 0px;
+    }
+    .carousel-linktxt{
+        margin-top: 15px;
+        padding-left: 10px;
+    }
+}

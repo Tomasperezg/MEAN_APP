@@ -3,13 +3,13 @@
     justify-content: center;
     padding-bottom: 25px;
     img{
-        height: 610px;
+        height: 670px;
         width: 620px;
     }
     .contact-hro-txt{
-        height: 610px;
+        height: 670px;
         width: 620px;
-        background-color: #DCEFF2;
+       
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -31,24 +31,19 @@
     border-right-style: none;
     border-color: black;
     border-bottom-style: solid;
-    width: 100%;
+    width: 90%;
     margin-bottom: 0px;
     margin-top: 10px;
 }
-.radios{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-family: 'Playfair Display', serif;
-}
+
 textarea{
-    width: 100%;
+    width: 90%;
     border-top-style: none;
     border-left-style: none;
     border-right-style: none;
     border-bottom-style: solid;
     border-bottom-color: black;
-    height: 100px;
+    height: 80px;
     margin-top: 25px;
 }
 .Button-Class{
