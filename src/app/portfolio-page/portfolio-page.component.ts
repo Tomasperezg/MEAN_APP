@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { HttpClient } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-portfolio-page',
@@ -33,3 +34,8 @@ export class PortfolioPageComponent implements OnInit {
     return item.id == this.selectedId;
   }
 }
+
+
+// https://raw.githubusercontent.com/Tomasperezg/MEAN_APP/main/src/assets/Images/home-3bnr-1.jpg?token=AJATCYDVBHZ65DYE7ZK62OTACVAEI
+// https://raw.githubusercontent.com/Tomasperezg/MEAN_APP/main/src/assets/Images/home-3bnr-2.jpg?token=AJATCYHDABJJBAHRWNL6S2TACVAJ2
+// https://raw.githubusercontent.com/Tomasperezg/MEAN_APP/main/src/assets/Images/HomeHero.jpg?token=AJATCYB2EFYZARGBHW754NDACVAL4

@@ -2,7 +2,7 @@ const express = require('express');
 require('./db/mongoose')
 const cors = require('cors')
 const userRouter = require('./router/user')
-
+const itemRouter = require('./router/item')
 
 const app = express();
 const port = process.env.PORT || 8000
@@ -11,7 +11,7 @@ const port = process.env.PORT || 8000
 app.use(express.json())
 app.use(cors())
 app.use(userRouter)
-
+app.use(itemRouter)
 
 
 // app.post('/form', function(req, res){
