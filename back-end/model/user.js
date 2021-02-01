@@ -3,6 +3,7 @@ const validator = require('validator')
 
 const User = mongoose.model('User', {
     userEmail: {
+        unique: true,
         type: String,
         required: true,
         trim: true,
