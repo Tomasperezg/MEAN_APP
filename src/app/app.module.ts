@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'; //<- this needs to be added when f
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -16,7 +17,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

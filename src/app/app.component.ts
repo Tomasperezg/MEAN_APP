@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { User } from './user';
 import { EnrollmentService } from './enrollment.service';
+import { slideInAnimation } from './animations';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [ slideInAnimation ]
 })
 export class AppComponent {
   submitted = false;
@@ -37,6 +40,10 @@ export class AppComponent {
   ];
 
   userModel = new User('');
+
+  getAnimationData(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
 
   onSubmit(){
     this.submitted = true;

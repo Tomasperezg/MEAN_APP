@@ -15,7 +15,7 @@ export class PortfolioDetailPageComponent implements OnInit {
     // let id = parseInt(this.route.snapshot.paramMap.get('id'));
     // this.portfolioId = id
     this.route.paramMap.subscribe((params: ParamMap) => {
-      let id = parseInt(params.get('id'));
+      let id = parseInt(params.get('_id'));
       this.portfolioId = id;
     });
   }

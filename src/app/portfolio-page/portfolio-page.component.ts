@@ -14,21 +14,23 @@ export class PortfolioPageComponent implements OnInit {
 
 
   public portfolioList = []
+  public error = '';
+  public selectedId;
 
   ngOnInit() {
     this.portfolioService.getAllItems().subscribe(
-      data => {
-        this.portfolioList = data
-      })
+      data => { this.portfolioList = data}, error => { this.error = error.statusText })
+
+
     // this.route.paramMap.subscribe((params: ParamMap) => {
-    //   let id = parseInt(params.get('id'));
+    //   let id = parseInt(params.get('_id'));
     //   this.selectedId = id;
     // });
   }
-  // onSelect(item){
-  //   // this.router.navigate(['/portfolio', item.id]);
-  //   this.router.navigate([item.id], {relativeTo: this.route}); 
-  // }
+  onSelect(item){
+    this.router.navigate(['/portfolio', item._id]);
+    this.router.navigate([item._id], {relativeTo: this.route}); 
+  }
   // isSelected(item){
   //   return item.id == this.selectedId;
   // }
