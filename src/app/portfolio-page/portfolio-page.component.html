@@ -1,6 +1,6 @@
 <h3 style="text-align: center;">Porfolio</h3>
-<ul class="projects">
-    <li (click)="onSelect(item)" *ngFor="let item of portfolioList">
+<ul>
+    <li class="projects" (click)="onSelect(item)" *ngFor="let item of portfolioList">
         <img src="{{item.ImageUrl}}" alt="{{item.Item_name}}">
         <span>{{item.Item_name}}</span>
     </li>
