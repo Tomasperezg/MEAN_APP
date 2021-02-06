@@ -59,7 +59,7 @@ router.delete('/item/:id', async (req, res) => {
 router.patch('/item/:id', async (req, res) => {
     const _id = req.params.id
     const updates = Object.keys(req.body)
-    const allowUpdates = ['Item_name', 'ImageUrl', 'description']
+    const allowUpdates = ['Item_name', 'ImageUrl', 'description', 'itemId']
     const isvalidUpdate = updates.every((update) => allowUpdates.includes(update))
 
     if(!isvalidUpdate){

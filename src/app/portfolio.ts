@@ -1,8 +1,8 @@
-export class Portfolio {
-    constructor(
-    public _id: string,
-    public Item_name: string,
-    public ImageUrl: string,
-    public description: string
-    ){}
+export interface Portfolio {
+    _id: string,
+    Item_name: string,
+    ImageUrl: string,
+    description: string,
+    itemId: number
+
 }

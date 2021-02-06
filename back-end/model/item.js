@@ -15,7 +15,14 @@ const Item = mongoose.model('Item', {
         type: String,
         required: true,
         trim: true
+    },
+    itemId: {
+        type: Number,
+        required: true,
+        unique: true
+        
     }
+
 })
 
 module.exports = Item

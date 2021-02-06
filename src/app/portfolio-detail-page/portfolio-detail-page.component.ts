@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { PortfolioService } from '../portfolio.service';
 
 @Component({
   selector: 'app-portfolio-detail-page',
@@ -8,28 +9,33 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 })
 export class PortfolioDetailPageComponent implements OnInit {
 
+  public portfolioList = []
   public portfolioId;
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  public error;
+  constructor(private route: ActivatedRoute, private router: Router, private portfolioService: PortfolioService) { }
 
   ngOnInit() {
-    // let id = parseInt(this.route.snapshot.paramMap.get('id'));
-    // this.portfolioId = id
+
+
     this.route.paramMap.subscribe((params: ParamMap) => {
-      let id = parseInt(params.get('_id'));
+      let id = params.get('_id');
       this.portfolioId = id;
     });
+    this.portfolioService.getItem(this.portfolioId).subscribe(
+      data => this.portfolioList = data,
+      error => this.error = error)
+      console.log('here: ', this.portfolioId)
   }
-  goPrevius(){
-    let previusId = this.portfolioId - 1;
-    this.router.navigate(['/portfolio-list', previusId]);
-  }
-  goNext(){
-    let nextId = this.portfolioId + 1;
-    this.router.navigate(['/portfolio-list', nextId]);
-  }
+  // goPrevius(){
+  //   let previusId = this.portfolioId - 1;
+  //   this.router.navigate(['/portfolio-list', previusId]);
+  // }
+  // goNext(){
+  //   let nextId = this.portfolioId + 1;
+  //   this.router.navigate(['/portfolio-list', nextId]);
+  // }
   gotoPortfolio(){
     let selectedId = this.portfolioId ? this.portfolioId : null;
-    // this.router.navigate(['/portfolio', {id: selectedId}]);
     this.router.navigate(['../', {id: selectedId}], {relativeTo: this.route})
   }
 }
