@@ -1,7 +1,9 @@
-<h3>You are in project: {{portfolioId}}</h3>
-<p>
-    here:{{portfolioList.Item_name}}
-</p>
+<h3>{{portfolioList.Item_name}}</h3>
+<div class="carousel">
+    <div class="container">
+         <img src="{{portfolioList.ImageUrl}}">
+    </div>
+</div>
 <div>
     <button (click)="gotoPortfolio()">Back</button>
 </div>

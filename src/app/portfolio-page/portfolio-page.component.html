@@ -1,9 +1,27 @@
-
+<a name="top"></a>
 <div class="container">
     <ul>
-        <li class="projects"  (click)="onSelect(item)" *ngFor="let item of portfolioList">
-            <img [class.selected]="isSelected(item)" src="{{item.ImageUrl}}" alt="{{item.Item_name}}">
-            <span class="Item_name">{{item.itemId}}</span>
+        <li class="projects"  *ngFor="let item of portfolioList">
+            <div class="details-container">
+                <div>
+                     <img [class.selected]="isSelected(item)" src="{{item.ImageUrl}}" alt="{{item.Item_name}}">
+                </div>
+                <div class="details">
+                    <span class="Item_name">{{item.Item_name}}</span>
+                    <div class="details-items">
+                        <p>
+                            Short Description:
+                            <br/>
+                            This is some short description for this house.</p>
+                        <p>ba</p>
+                        <p>bed</p>
+                        <div class="Button-Class">
+                                <button (click)="onSelect(item)">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
         </li>
     </ul>
 </div>

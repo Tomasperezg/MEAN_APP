@@ -21,7 +21,6 @@ export class PortfolioService {
 
   }
 
-
   getAllItems(): Observable<Portfolio[]>{
     return this.httpClient.get<Portfolio[]>(this._url + 'item')
     .pipe(catchError(this.errorHandler));
