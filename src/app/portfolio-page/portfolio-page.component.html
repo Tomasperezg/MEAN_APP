@@ -12,9 +12,13 @@
                         <p>
                             Short Description:
                             <br/>
-                            This is some short description for this house.</p>
-                        <p>ba</p>
-                        <p>bed</p>
+                            This is some short description for this house.
+                        </p>
+                        <div *ngFor="let key of getKeys(item.details)">
+                            <p>{{item.details[key].bath_num}} ba</p>
+                            <p>{{item.details[key].bed_num}} bed</p>
+                        </div>
+                    
                         <div class="Button-Class">
                                 <button [class.selected]="isSelected(item)" (click)="onSelect(item)">Learn More</button>
                         </div>

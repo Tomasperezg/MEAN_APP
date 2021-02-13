@@ -20,8 +20,17 @@ const Item = mongoose.model('Item', {
         type: Number,
         required: true,
         unique: true
-        
-    }
+    },
+    details:[{
+        bed_num: {
+            type: Number,
+            required: false
+        },
+        bath_num: {
+            type: Number,
+            required: false
+        }
+    }],
 
 })
 

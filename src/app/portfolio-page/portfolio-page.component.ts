@@ -29,6 +29,9 @@ export class PortfolioPageComponent implements OnInit {
       error => this.error = error.statusText)
       
   }
+  getKeys(obj: any): Array<string> {
+    return Object.keys(obj);
+  }
 
   onSelect(item){
     this.router.navigate([item._id], {relativeTo: this.route}); 
