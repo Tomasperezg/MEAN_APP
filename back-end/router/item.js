@@ -2,7 +2,6 @@ const express = require('express')
 const router = new express.Router()
 const Item = require('../model/item')
 
-// Need CRUD commands
 // add a new Item
 router.post('/item', async (req, res) => {
     const item = new Item(req.body)
