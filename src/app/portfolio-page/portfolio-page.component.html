@@ -16,7 +16,7 @@
                         <p>ba</p>
                         <p>bed</p>
                         <div class="Button-Class">
-                                <button (click)="onSelect(item)">Learn More</button>
+                                <button [class.selected]="isSelected(item)" (click)="onSelect(item)">Learn More</button>
                         </div>
                     </div>
                 </div>
@@ -25,6 +25,13 @@
         </li>
     </ul>
 </div>
-<p *ngIf="error">
-    {{error}}
-</p>
+<div *ngIf="error">
+        <div style="text-align: center; padding-bottom: 100px;">
+                <h1 style="font-size: 200px; font-weight: 900;">400</h1>
+                <p style="font-size: 20px; font-weight: 200;">400 Error, Cant connect to database...  <img style="width: 100px; height: 100px;"src="assets/Images/bird.png" alt="blackbird"></p>
+            
+            </div>
+            <div class="Button-Class">
+                <button><a routerLink='/home'>Go Back Home</a></button>
+            </div>
+</div>

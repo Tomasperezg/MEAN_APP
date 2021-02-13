@@ -27,19 +27,20 @@
 .Button-Class button{
     width: 160px;
     height: 50px;
-    background: #2c2c2c;
+    background: white;
+    border-color: #2c2c2c;
     border-radius: 40px;
     font-size: 20px;
     font-family: 'Noto Serif', serif;
     a{
-        color: white;
+        color: #2c2c2c;
     }
 }
 .Button-Class button:hover{
-    background-color: white;
+    background-color: #2c2c2c;
     border-color: #2c2c2c;
     a{
-        color: black;
+        color: white;
     }
 }
 .carousel-list img{
