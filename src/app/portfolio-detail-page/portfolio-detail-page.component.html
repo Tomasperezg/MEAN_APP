@@ -1,9 +1,19 @@
 <h3>{{portfolioList.Item_name}}</h3>
 <div class="carousel">
     <div class="container">
-         <img src="{{portfolioList.ImageUrl}}">
+        <ul *ngFor="let img of portfolioList.gallery; let i=index">
+            <li>
+                <img src="{{img}}">
+            </li>
+        </ul>
     </div>
+    <div class="top-left"><button (clicl)="prevImage()">Previus</button></div>
+    <div class="top-right"><button (clicl)="nextImage()">Next</button></div>
 </div>
+
+<p>
+    {{portfolioList.description}}
+</p>
 <div>
     <button (click)="gotoPortfolio()">Back</button>
 </div>

@@ -7,6 +7,7 @@ export interface Portfolio {
     details: [{
         bed_num: number,
         bath_num: number
-    }]
+    }],
+    gallery: []
 
 }

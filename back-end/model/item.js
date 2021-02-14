@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 
-const Item = mongoose.model('Item', {
+const itemSchema = new mongoose.Schema({
     Item_name: {
         type: String,
         required: true,
@@ -31,7 +31,12 @@ const Item = mongoose.model('Item', {
             required: false
         }
     }],
-
+    gallery: [] 
+   
+}, {
+    timestamps: true
 })
+
+const Item = mongoose.model('Item', itemSchema)
 
 module.exports = Item
