@@ -26,6 +26,21 @@ export class PortfolioDetailPageComponent implements OnInit {
       error => this.error = error)
       console.log('here: ', this.portfolioId)
   }
+  
+  // trackById(index: number){
+  //   console.log(index)
+  // }
+  displayImage = 0
+
+  nextImage(image){
+    this.displayImage = image + 1
+    console.log(this.displayImage)
+  }
+  prevImage(image){
+    this.displayImage = image - 1
+    console.log(this.displayImage)
+  }
+  
   // goPrevius(){
   //   let previusId = this.portfolioId - 1;
   //   this.router.navigate(['/portfolio-list', previusId]);
