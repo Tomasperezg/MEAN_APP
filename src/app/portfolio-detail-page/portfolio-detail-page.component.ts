@@ -7,6 +7,7 @@ import { PortfolioService } from '../portfolio.service';
   templateUrl: './portfolio-detail-page.component.html',
   styleUrls: ['./portfolio-detail-page.component.scss']
 })
+
 export class PortfolioDetailPageComponent implements OnInit {
 
   public portfolioList = []
@@ -16,29 +17,38 @@ export class PortfolioDetailPageComponent implements OnInit {
 
   ngOnInit() {
 
-
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('_id');
       this.portfolioId = id;
     });
     this.portfolioService.getItem(this.portfolioId).subscribe(
       data => this.portfolioList = data,
-      error => this.error = error)
-      console.log('here: ', this.portfolioId)
+      error => this.error = error);
+    }
+ 
+  trackByImg(index: number, img: any){
+    return img ? img : null
   }
-  
-  // trackById(index: number){
-  //   console.log(index)
-  // }
-  displayImage = 0
 
-  nextImage(image){
-    this.displayImage = image + 1
-    console.log(this.displayImage)
+  
+  currentImage = 0
+  
+
+  nextImage(image, l){
+    image += 1;
+    this.currentImage = image;
+    if(image > l - 1){
+      this.currentImage = 0;
+    }
+    console.log(this.currentImage)
+    console.log()
   }
-  prevImage(image){
-    this.displayImage = image - 1
-    console.log(this.displayImage)
+  prevImage(image ,l){
+    image -= 1;
+    this.currentImage = image;
+    if(image < 0){
+      this.currentImage = l - 1;
+    }
   }
   
   // goPrevius(){
