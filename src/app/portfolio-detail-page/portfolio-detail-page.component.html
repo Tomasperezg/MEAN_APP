@@ -1,21 +1,23 @@
 <h3>{{portfolioList.Item_name}}</h3>
 <div class="carousel">
     <div class="container">
-        <ul *ngFor="let img of portfolioList.gallery; index as i; let l = count; trackBy: trackByImg; let isLast = last;">
+        <ul  *ngFor="let img of portfolioList.gallery; index as i; let l = count; trackBy: trackByImg; let isLast = last;">
             <li *ngIf="i == currentImage">
                 <img src="{{img}}">
             </li>
-            <div class="top-left"><a (click)="prevImage(currentImage , l)">Previus</a></div>
-            <div class="top-right"><a (click)="nextImage(currentImage, l)">Next</a></div>
+            <div class="top-left"><a class="back" (click)="prevImage(currentImage , l)">‹</a></div>
+        <div class="top-right"><a class="next" (click)="nextImage(currentImage, l)">›</a></div>
         </ul>
     </div>
 </div>
 
-<p>
+<p class="item-description">
     {{portfolioList.description}}
 </p>
-<div>
-    <button (click)="gotoPortfolio()">Back</button>
-</div>
-<a (click)="goPrevius()">Previus</a>
-<a (click)="goNext()">Next</a>
+
+<div class="Button-Class">
+        <button><a (click)="gotoPortfolio()">Go Back</a></button>
+    </div>
+<!-- <a (click)="goPrevius()">Previus</a>
+<a (click)="goNext()">Next</a> -->
+

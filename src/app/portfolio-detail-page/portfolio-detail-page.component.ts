@@ -13,7 +13,8 @@ export class PortfolioDetailPageComponent implements OnInit {
   public portfolioList = []
   public portfolioId;
   public error;
-  constructor(private route: ActivatedRoute, private router: Router, private portfolioService: PortfolioService) { }
+
+  constructor(private route: ActivatedRoute, private router: Router, private portfolioService: PortfolioService) {}
 
   ngOnInit() {
 
@@ -24,25 +25,30 @@ export class PortfolioDetailPageComponent implements OnInit {
     this.portfolioService.getItem(this.portfolioId).subscribe(
       data => this.portfolioList = data,
       error => this.error = error);
+
     }
  
   trackByImg(index: number, img: any){
     return img ? img : null
   }
 
-  
-  currentImage = 0
-  
 
-  nextImage(image, l){
-    image += 1;
+  currentImage = 0
+
+
+
+  nextImage(image:any, l:any){
+      image += 1;
+
     this.currentImage = image;
-    if(image > l - 1){
-      this.currentImage = 0;
-    }
-    console.log(this.currentImage)
-    console.log()
+      if(image > l - 1){
+        this.currentImage = 0;
+      }
+      console.log(this.currentImage)
   }
+
+
+
   prevImage(image ,l){
     image -= 1;
     this.currentImage = image;
