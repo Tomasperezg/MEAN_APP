@@ -57,7 +57,6 @@ hr {
 .Button-Class button{
     width: 160px;
     height: 50px;
-    background: white;
     border-radius: 40px;
     border-color: #2c2c2c;
     font-size: 20px;
@@ -74,4 +73,7 @@ hr {
         text-decoration: none;
         color: white;
     }
+}
+.selected{
+    background-color: red;
 }

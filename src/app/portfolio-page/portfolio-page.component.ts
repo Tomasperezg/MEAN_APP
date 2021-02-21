@@ -22,12 +22,13 @@ export class PortfolioPageComponent implements OnInit {
   public portfolioList = []
   public error;
   public selectedId;
+  public spinerLoader = true;
 
   ngOnInit() {
     this.portfolioService.getAllItems().subscribe(
       data => this.portfolioList = data, 
       error => this.error = error.statusText)
-      
+      this.spinerLoader = false;
   }
   getKeys(obj: any): Array<string> {
     return Object.keys(obj);
