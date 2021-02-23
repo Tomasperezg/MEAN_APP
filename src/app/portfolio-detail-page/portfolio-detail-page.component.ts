@@ -1,11 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { PortfolioService } from '../portfolio.service';
+import { carouselAnimation } from '../animations';
+import { LoaderService } from '../loader/loader.service';
 
 @Component({
   selector: 'app-portfolio-detail-page',
   templateUrl: './portfolio-detail-page.component.html',
-  styleUrls: ['./portfolio-detail-page.component.scss']
+  styleUrls: ['./portfolio-detail-page.component.scss'],
+  providers: [ PortfolioService ],
+  animations: [carouselAnimation]
 })
 
 export class PortfolioDetailPageComponent implements OnInit {
@@ -14,7 +18,8 @@ export class PortfolioDetailPageComponent implements OnInit {
   public portfolioId;
   public error;
 
-  constructor(private route: ActivatedRoute, private router: Router, private portfolioService: PortfolioService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private portfolioService: PortfolioService, public loaderService: LoaderService) {}
+
 
   ngOnInit() {
 

@@ -11,7 +11,7 @@ import { throwError, Observable } from 'rxjs';
 
 export class PortfolioService {
 
-  _url = 'http://localhost:8000/'
+  _url = 'https://blackbird-web-api.herokuapp.com/'
 
   constructor(private httpClient: HttpClient) { }
 
