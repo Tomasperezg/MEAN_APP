@@ -41,3 +41,16 @@ trigger('pageAnimations', [
       ])
     ])
   ]);
+
+// carousel animation
+export const carouselAnimation = 
+trigger('carouselSlide', [
+  transition(':enter', [
+    style({opacity: 1}),
+    animate('500ms', style({opacity: 0}))
+  ]),
+  transition(':leave', [
+    style({opacity: 0}),
+    animate('500ms', style({opacity: 1}))
+  ])
+])

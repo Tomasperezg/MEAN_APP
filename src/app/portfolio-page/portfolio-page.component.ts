@@ -2,6 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { PortfolioService } from '../portfolio.service';
 import { projectsAnimation } from '../animations';
+import { LoaderService } from '../loader/loader.service';
 
 @Component({
   selector: 'app-portfolio-page',
@@ -16,7 +17,7 @@ export class PortfolioPageComponent implements OnInit {
   @HostBinding('@pageAnimations')
   public animatePage = true;
 
-  constructor(private router: Router, private route: ActivatedRoute, private portfolioService: PortfolioService ){ }
+  constructor(private router: Router, private route: ActivatedRoute, private portfolioService: PortfolioService, public loaderService: LoaderService ){ }
 
 
   public portfolioList = []
@@ -25,11 +26,12 @@ export class PortfolioPageComponent implements OnInit {
   public spinerLoader = true;
 
   ngOnInit() {
+    this.spinerLoader = false;
     this.portfolioService.getAllItems().subscribe(
       data => this.portfolioList = data, 
-      error => this.error = error.statusText)
-      this.spinerLoader = false;
+      error => this.error = error.statusText);
   }
+  
   getKeys(obj: any): Array<string> {
     return Object.keys(obj);
   }
