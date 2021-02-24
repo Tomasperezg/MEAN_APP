@@ -1,6 +1,6 @@
-<div *ngIf="loaderService.isLoading | async">
-    Loading...
+<div class="loader" *ngIf="loaderService.isLoading | async">
 </div>
+
 <div class="container">
     <ul>
         <li class="projects"  *ngFor="let item of portfolioList">
