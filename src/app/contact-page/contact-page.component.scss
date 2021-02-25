@@ -101,3 +101,22 @@ textarea{
     padding-bottom: 10px;
     color: red;
 }
+// Tablet Breakpoint:
+@media (min-width: 600px) and (max-width: 1024px){
+    .contact-hro{
+        display: flex;
+        flex-direction: column;
+        img{
+            display: none;
+        }
+        .contact-hro-txt{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .errorRes{
+        margin-top: 25%;
+        margin-bottom: 25%;
+    }
+  
+}
