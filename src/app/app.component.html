@@ -18,8 +18,8 @@
   </ul>
 </nav>
 
-<div class="container" [@routeAnimation]="getAnimationData(routerOutlet)">
-    <router-outlet #routerOutlet="outlet" autoscroll="true"></router-outlet>
+<div class="container" [@routeAnimation]="getAnimationData(routerOutlet)" autoscroll="true">
+    <router-outlet #routerOutlet="outlet" autoscroll="true" (activate)="onActivate($event)"></router-outlet>
   </div>
 <div class="footer">
     <div *ngIf="errorMsg" class="success-msg">
