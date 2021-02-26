@@ -3,6 +3,7 @@ import { User } from './user';
 import { EnrollmentService } from './enrollment.service';
 import { slideInAnimation } from './animations';
 import { RouterOutlet } from '@angular/router';
+import { LoaderService } from './loader/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
   submitted = false;
   errorMsg = '';
 
-  constructor(private _enrollmentService: EnrollmentService){}
+  constructor(private _enrollmentService: EnrollmentService, public loaderService: LoaderService ){}
 
   socTiles = [
     {
