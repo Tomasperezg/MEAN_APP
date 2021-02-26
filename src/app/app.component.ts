@@ -4,6 +4,8 @@ import { EnrollmentService } from './enrollment.service';
 import { slideInAnimation } from './animations';
 import { RouterOutlet } from '@angular/router';
 import { LoaderService } from './loader/loader.service';
+declare var $: any;
+
 
 @Component({
   selector: 'app-root',
@@ -54,6 +56,9 @@ export class AppComponent {
       error => this.errorMsg = error.statusText
     )
   }
-
+  // Page auto scroller on load 
+  onActivate(event){
+    window.scroll(0 , 0)
+  }
 
 }
