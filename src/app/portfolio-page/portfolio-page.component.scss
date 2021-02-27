@@ -36,8 +36,8 @@ hr {
     margin-top: 25%;
     margin-bottom: 25%;
     left: 50%;
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -50,25 +50,6 @@ hr {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-
-// .Button-Class{
-//     text-align: center;
-// }
-// .Button-Class button{
-//     width: 160px;
-//     height: 40px;
-//     background: #2c2c2c;
-//     border-radius: 40px;
-//     font-size: 20px;
-//     font-family: 'Noto Serif', serif;
-//     color: white;
-// }
-// .Button-Class button:hover{
-//     background-color: white;
-//     border-color: #2c2c2c;
-//     color: black;
-// }
-
 
 // Error response
 .Button-Class{
@@ -99,4 +80,12 @@ hr {
 }
 .selected{
     background-color: red;
+}
+
+// Tablet Breakpoint:
+@media (min-width: 600px) and (max-width: 1024px){
+    img{
+        width: 390px;
+        height: 210;
+    }
 }

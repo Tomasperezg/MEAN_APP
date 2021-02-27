@@ -16,6 +16,7 @@ declare var $: any;
 export class AppComponent {
   submitted = false;
   errorMsg = '';
+  navOpen = true;
 
   constructor(private _enrollmentService: EnrollmentService, public loaderService: LoaderService ){}
 
@@ -47,7 +48,9 @@ export class AppComponent {
   getAnimationData(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
-
+  isNavOpen(){
+    this.navOpen = this.navOpen ? false : true;
+  }
   onSubmit(){
     this.submitted = true;
     this._enrollmentService.enroll(this.userModel)
