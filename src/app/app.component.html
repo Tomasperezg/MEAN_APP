@@ -1,22 +1,44 @@
+<div class="burger-menu">
+    <div class="burger-menu-button" (click)="isNavOpen()">=</div>
+</div>
+
+<div class="full-nav">
 <div class="Nav-Logo">
   <img src="assets/Images/logo.jpg" alt="Black Bird Homes Logo">
 </div>
-<nav>
+<nav class="desk-nav">
+    <ul>
+      <li>
+          <a routerLink='home' routerLinkActive='active'>Home |</a>
+      </li>
+      <li>
+          <a routerLink='/about-us' routerLinkActive='active'>About Us |</a>
+      </li>
+      <li>
+          <a routerLink='/contact-us' routerLinkActive='active'>Contact Us |</a>
+      </li>
+      <li>
+          <a routerLink='/portfolio-list' routerLinkActive='active'>Portfolio</a>
+      </li>
+    </ul>
+  </nav>
+<nav *ngIf="navOpen" class="mobile-nav">
   <ul>
     <li>
-        <a routerLink='home' routerLinkActive='active'>Home |</a>
+        <a routerLink='home' routerLinkActive='active' (click)="isNavOpen()">Home </a>
     </li>
     <li>
-        <a routerLink='/about-us' routerLinkActive='active'>About Us |</a>
+        <a routerLink='/about-us' routerLinkActive='active' (click)="isNavOpen()">About Us </a>
     </li>
     <li>
-        <a routerLink='/contact-us' routerLinkActive='active'>Contact Us |</a>
+        <a routerLink='/contact-us' routerLinkActive='active' (click)="isNavOpen()">Contact Us </a>
     </li>
     <li>
-        <a routerLink='/portfolio-list' routerLinkActive='active'>Portfolio</a>
+        <a routerLink='/portfolio-list' routerLinkActive='active' (click)="isNavOpen()">Portfolio</a>
     </li>
   </ul>
 </nav>
+</div>
 
 <div class="container" [@routeAnimation]="getAnimationData(routerOutlet)" autoscroll="true">
     <router-outlet #routerOutlet="outlet" autoscroll="true" (activate)="onActivate($event)"></router-outlet>
