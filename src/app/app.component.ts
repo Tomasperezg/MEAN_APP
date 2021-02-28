@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from './user';
 import { EnrollmentService } from './enrollment.service';
-import { slideInAnimation } from './animations';
+import { slideInAnimation, navAnimation } from './animations';
 import { RouterOutlet } from '@angular/router';
 import { LoaderService } from './loader/loader.service';
 declare var $: any;
@@ -11,12 +11,12 @@ declare var $: any;
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [ slideInAnimation ]
+  animations: [ slideInAnimation, navAnimation ]
 })
 export class AppComponent {
   submitted = false;
   errorMsg = '';
-  navOpen = true;
+  navOpen = false;
 
   constructor(private _enrollmentService: EnrollmentService, public loaderService: LoaderService ){}
 

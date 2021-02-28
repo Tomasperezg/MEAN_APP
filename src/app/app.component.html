@@ -22,7 +22,7 @@
       </li>
     </ul>
   </nav>
-<nav *ngIf="navOpen" class="mobile-nav">
+<nav @slideNav *ngIf="navOpen" class="mobile-nav">
   <ul>
     <li>
         <a routerLink='home' routerLinkActive='active' (click)="isNavOpen()">Home </a>
