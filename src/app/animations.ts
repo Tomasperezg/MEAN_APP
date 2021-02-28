@@ -54,3 +54,18 @@ trigger('carouselSlide', [
     animate('500ms', style({opacity: 1}))
   ])
 ])
+
+// Mobile nav 
+export const navAnimation = 
+trigger('slideNav', [
+  transition(':enter', [
+    style({opacity: 0, transform: 'translateY(-20px)'}),
+    animate('300ms', style({opacity: 1}))
+  ]),
+  transition(':leave', [
+    style({opacity: 0}),
+    animate('300ms', style({transform: 'translateY(40px)'}))
+  ])
+]
+
+)

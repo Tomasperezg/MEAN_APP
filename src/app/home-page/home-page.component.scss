@@ -87,7 +87,7 @@ a {
   }
 
 // Tablet Breakpoint:
-@media (min-width: 600px) and (max-width: 1024px){ 
+@media (min-width: 737px) and (max-width: 1024px){ 
     .Hero-Image img{
         width: 100%;
     }
@@ -106,5 +106,25 @@ a {
     .carousel-linktxt{
         margin-top: 15px;
         padding-left: 10px;
+    }
+}
+// mobile breakpoint
+@media (max-width: 736px){
+    .Hero-Image img{
+        width: 100%;
+        height: 100%;
+    }
+    .carousel-list img{
+        width: 85%;
+        height: 210px;
+    }
+    .carousel-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .carousel-content{
+        width: 100%;
+        padding-left: 0px;
     }
 }
