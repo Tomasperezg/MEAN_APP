@@ -59,12 +59,12 @@ trigger('carouselSlide', [
 export const navAnimation = 
 trigger('slideNav', [
   transition(':enter', [
-    style({opacity: 0, transform: 'translateY(-20px)'}),
-    animate('300ms', style({opacity: 1}))
+    style({opacity: 0, transform: 'translateY(-100%)'}),
+    animate('200ms ease-in', style({opacity: 1, transform: 'translateY(0%)'}))
   ]),
   transition(':leave', [
-    style({opacity: 0}),
-    animate('300ms', style({transform: 'translateY(40px)'}))
+    style({opacity: 1}),
+    animate('200ms ease-in', style({transform: 'translateY(-100%)'}))
   ])
 ]
 
