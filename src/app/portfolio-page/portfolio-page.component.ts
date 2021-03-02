@@ -23,10 +23,8 @@ export class PortfolioPageComponent implements OnInit {
   public portfolioList = []
   public error;
   public selectedId;
-  public spinerLoader = true;
 
   ngOnInit() {
-    this.spinerLoader = false;
     this.portfolioService.getAllItems().subscribe(
       data => this.portfolioList = data, 
       error => this.error = error.statusText);
