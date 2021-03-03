@@ -4,16 +4,17 @@
 /dist
 /tmp
 /out-tsc
+/back-end
 # Only exists if Bazel was run
 /bazel-out
-
+/back-end
 # dependencies
 /node_modules
-
+/back-end
 # profiling files
 chrome-profiler-events*.json
 speed-measure-plugin*.json
-
+/back-end
 # IDEs and editors
 /.idea
 .project
@@ -22,7 +23,7 @@ speed-measure-plugin*.json
 *.launch
 .settings/
 *.sublime-workspace
-/back-end
+
 
 # IDE - VSCode
 .vscode/*
@@ -45,3 +46,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+/back-end
