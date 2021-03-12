@@ -3,9 +3,9 @@
 <h3>{{portfolioList.Item_name}}</h3>
 <div class="carousel">
     <div class="container">
-        <ul  *ngFor="let img of portfolioList.gallery; index as i; let l = count; trackBy: trackByImg; let isLast = last;">
-            <li *ngIf="i == currentImage">
-                <img src="{{img}}">
+        <ul  @carouselSlide *ngFor="let img of portfolioList.gallery; index as i; let l = count; trackBy: trackByImg; let isLast = last;">
+            <li *ngIf="i == currentImage" >
+                <img @carouselSlide src="{{img}}">
             </li>
             <div class="top-left"><a class="back" (click)="prevImage(currentImage , l)">‹</a></div>
         <div class="top-right"><a class="next" (click)="nextImage(currentImage, l)">›</a></div>
