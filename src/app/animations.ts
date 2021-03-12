@@ -1,6 +1,6 @@
 import {
     trigger, animateChild, group,
-    transition, animate, style, query, stagger
+    transition, animate, style, query, stagger, state
   } from '@angular/animations';
   
   // Routable animations
@@ -46,12 +46,12 @@ trigger('pageAnimations', [
 export const carouselAnimation = 
 trigger('carouselSlide', [
   transition(':enter', [
-    style({opacity: 1}),
-    animate('500ms', style({opacity: 0}))
+    style({opacity: 0.5}),
+    animate('300ms ease-in', style({opacity: 1}))
   ]),
   transition(':leave', [
-    style({opacity: 0}),
-    animate('500ms', style({opacity: 1}))
+    style({opacity: 1}),
+    animate('300ms ease-in', style({}))
   ])
 ])
 

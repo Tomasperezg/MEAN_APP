@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { PortfolioService } from '../portfolio.service';
 import { projectsAnimation } from '../animations';
 import { LoaderService } from '../loader/loader.service';
+import { Observable, Subscription, of } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio-page',
@@ -12,7 +13,7 @@ import { LoaderService } from '../loader/loader.service';
   animations: [ projectsAnimation ]
 })
 export class PortfolioPageComponent implements OnInit {
-
+  subscription: Subscription;
 
   @HostBinding('@pageAnimations')
   public animatePage = true;
@@ -25,11 +26,15 @@ export class PortfolioPageComponent implements OnInit {
   public selectedId;
 
   ngOnInit() {
-    this.portfolioService.getAllItems().subscribe(
+    this.subscription = this.portfolioService.getAllItems().subscribe(
       data => this.portfolioList = data, 
       error => this.error = error.statusText);
   }
-  
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
+  }
+
+
   getKeys(obj: any): Array<string> {
     return Object.keys(obj);
   }
