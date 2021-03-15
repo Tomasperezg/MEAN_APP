@@ -78,6 +78,33 @@ ul, li{
         color: white;
     }
 }
+.detail-dropdown{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    padding-top: 10px;
+    p{
+        font-size: 22px;
+        font-weight: 600;
+    }
+}
+.details-hr{
+    border: 1px solid #2c2c2c;
+}
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #2c2c2c;
+    padding-top:inherit;
+  }
+  .accordion-open{
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 10px;
+  }
 //loader
 .loader {
     position: relative;
