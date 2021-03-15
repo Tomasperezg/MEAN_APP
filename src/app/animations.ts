@@ -47,11 +47,11 @@ export const carouselAnimation =
 trigger('carouselSlide', [
   transition(':enter', [
     style({opacity: 0.5}),
-    animate('300ms ease-in', style({opacity: 1}))
+    animate('350ms ease-in', style({opacity: 1}))
   ]),
   transition(':leave', [
     style({opacity: 1}),
-    animate('300ms ease-in', style({}))
+    animate('350ms ease-in', style({}))
   ])
 ])
 

@@ -26,7 +26,8 @@ export class PortfolioPageComponent implements OnInit {
   public selectedId;
 
   ngOnInit() {
-    this.subscription = this.portfolioService.getAllItems().subscribe(
+    this.subscription = this.portfolioService.getAllItems()
+    .subscribe(
       data => this.portfolioList = data, 
       error => this.error = error.statusText);
   }

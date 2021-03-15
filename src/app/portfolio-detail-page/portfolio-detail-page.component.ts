@@ -3,13 +3,14 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { PortfolioService } from '../portfolio.service';
 import { carouselAnimation } from '../animations';
 import { LoaderService } from '../loader/loader.service';
+import { accordionAnimation } from '../animations/accordion'
 
 @Component({
   selector: 'app-portfolio-detail-page',
   templateUrl: './portfolio-detail-page.component.html',
   styleUrls: ['./portfolio-detail-page.component.scss'],
   providers: [ PortfolioService ],
-  animations: [carouselAnimation]
+  animations: [carouselAnimation, accordionAnimation]
 })
 
 export class PortfolioDetailPageComponent implements OnInit {
@@ -17,6 +18,8 @@ export class PortfolioDetailPageComponent implements OnInit {
   public portfolioList = []
   public portfolioId;
   public error;
+  accordionOpen = false;
+
 
   constructor(private route: ActivatedRoute, private router: Router, private portfolioService: PortfolioService, public loaderService: LoaderService) {}
 
@@ -62,6 +65,10 @@ export class PortfolioDetailPageComponent implements OnInit {
     }
   }
   
+  openAccordion(){
+    this.accordionOpen = this.accordionOpen? false : true;
+  }
+
   // goPrevius(){
   //   let previusId = this.portfolioId - 1;
   //   this.router.navigate(['/portfolio-list', previusId]);

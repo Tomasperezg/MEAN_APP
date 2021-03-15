@@ -16,7 +16,21 @@
 <p class="item-description">
     {{portfolioList.description}}
 </p>
-
+<hr class="details-hr">
+<div class="detail-dropdown">
+    <p>Details</p>
+    <div *ngIf="!accordionOpen" class="accordion-open" (click)="openAccordion()">+</div>
+    <div *ngIf="accordionOpen" class="accordion-open" (click)="openAccordion()">-</div>
+</div>
+<hr class="details-hr">
+<div @extendAccordion *ngIf="accordionOpen" class="details-data">
+    <p>4 Bedrooms</p>
+    <hr>
+    <p>3 Bathrooms</p>
+    <hr/>
+    <p>2,050 sqft</p>
+    <hr>
+</div>
 <div class="Button-Class">
         <button><a (click)="gotoPortfolio()">Go Back</a></button>
     </div>
