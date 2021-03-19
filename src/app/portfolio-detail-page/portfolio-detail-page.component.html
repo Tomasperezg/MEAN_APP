@@ -4,11 +4,13 @@
 <div class="carousel">
     <div class="container">
         <ul  @carouselSlide *ngFor="let img of portfolioList.gallery; index as i; let l = count; trackBy: trackByImg; let isLast = last;">
-            <li *ngIf="i == currentImage" >
+            <li *ngIf="i == currentImage">
+                
                 <img @carouselSlide src="{{img}}">
+                <p class="carousel-count">{{i+1}} / {{l}}</p>
             </li>
             <div class="top-left"><a class="back" (click)="prevImage(currentImage , l)">‹</a></div>
-        <div class="top-right"><a class="next" (click)="nextImage(currentImage, l)">›</a></div>
+            <div class="top-right"><a class="next" (click)="nextImage(currentImage, l)">›</a></div>
         </ul>
     </div>
 </div>
@@ -23,17 +25,21 @@
     <div *ngIf="accordionOpen" class="accordion-open" (click)="openAccordion()">-</div>
 </div>
 <hr class="details-hr">
-<div @extendAccordion *ngIf="accordionOpen" class="details-data">
-    <p>4 Bedrooms</p>
-    <hr>
-    <p>3 Bathrooms</p>
-    <hr/>
-    <p>2,050 sqft</p>
-    <hr>
+<div @extendAccordion *ngIf="accordionOpen" class="details-data" >
+    <div *ngFor="let key of getKeys(portfolioList.details)">
+        <p>{{portfolioList.details[key].bath_num}} Bathrooms</p>
+        <hr>
+        <p>{{portfolioList.details[key].bed_num}} Bedroom</p>
+        <hr/>
+        <p>2,050 sqft</p>
+        <hr>
+    </div>
 </div>
 <div class="Button-Class">
         <button><a (click)="gotoPortfolio()">Go Back</a></button>
     </div>
+
+
 <!-- <a (click)="goPrevius()">Previus</a>
 <a (click)="goNext()">Next</a> -->
 

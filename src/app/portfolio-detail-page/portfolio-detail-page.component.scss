@@ -47,6 +47,14 @@ ul, li{
     color: red;
     font-size: 45px;
 }
+.carousel-count{
+    position: absolute;
+    top: 1px;
+    right: 90px;
+    color: white;
+    font-size: 15px;
+    padding: 2px;
+}
 .item-description{
     padding-top: 25px;
     font-size: 20px;
@@ -104,6 +112,7 @@ ul, li{
       font-size: 30px;
       font-weight: 600;
       margin-bottom: 10px;
+      cursor: pointer;
   }
 //loader
 .loader {
@@ -155,5 +164,9 @@ ul, li{
     }
     .loader{
         left: 35%;
+    }
+    .carousel-count{
+        right: 11px;
+        font-size: 15px;
     }
 }

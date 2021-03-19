@@ -6,6 +6,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { PortfolioPageComponent } from './portfolio-page/portfolio-page.component';
 import { PortfolioDetailPageComponent } from './portfolio-detail-page/portfolio-detail-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { GalleryComponent } from './gallery/gallery.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -31,5 +32,6 @@ export const routingComponents = [
   AboutPageComponent, 
   ContactPageComponent, 
   PortfolioPageComponent,
-  PortfolioDetailPageComponent, 
+  PortfolioDetailPageComponent,
+  GalleryComponent, 
   PageNotFoundComponent]
