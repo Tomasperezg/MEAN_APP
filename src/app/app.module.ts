@@ -6,12 +6,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InterceptorService } from './loader/interceptor.service';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

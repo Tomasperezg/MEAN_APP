@@ -1,9 +1,10 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding} from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { PortfolioService } from '../portfolio.service';
 import { projectsAnimation } from '../animations';
 import { LoaderService } from '../loader/loader.service';
 import { Observable, Subscription, of } from 'rxjs';
+
 
 @Component({
   selector: 'app-portfolio-page',
@@ -12,11 +13,16 @@ import { Observable, Subscription, of } from 'rxjs';
   providers: [ PortfolioService ],
   animations: [ projectsAnimation ]
 })
-export class PortfolioPageComponent implements OnInit {
+
+
+
+export class PortfolioPageComponent implements OnInit{
   subscription: Subscription;
 
   @HostBinding('@pageAnimations')
   public animatePage = true;
+
+  
 
   constructor(private router: Router, private route: ActivatedRoute, private portfolioService: PortfolioService, public loaderService: LoaderService ){ }
 

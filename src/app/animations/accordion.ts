@@ -11,6 +11,6 @@ import {
       ]),
       transition(':leave', [
         style({opacity: 1}),
-        animate('400ms ease-in', style({opacity: 0, transform: 'translateY(-20%)'}))
+        animate('400ms ease-in', style({opacity: 0, transform: 'translateY(-20%)', width: '40px'}))
       ])
   ])

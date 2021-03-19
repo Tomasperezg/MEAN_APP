@@ -68,15 +68,11 @@ export class PortfolioDetailPageComponent implements OnInit {
   openAccordion(){
     this.accordionOpen = this.accordionOpen? false : true;
   }
+  
+  getKeys(obj: any): Array<string> {
+    return Object.keys(obj);
+  }
 
-  // goPrevius(){
-  //   let previusId = this.portfolioId - 1;
-  //   this.router.navigate(['/portfolio-list', previusId]);
-  // }
-  // goNext(){
-  //   let nextId = this.portfolioId + 1;
-  //   this.router.navigate(['/portfolio-list', nextId]);
-  // }
   gotoPortfolio(){
     let selectedId = this.portfolioId ? this.portfolioId : null;
     this.router.navigate(['../', {id: selectedId}], {relativeTo: this.route})
