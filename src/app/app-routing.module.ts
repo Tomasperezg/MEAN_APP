@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactPageComponent, data: { animation: 'page'}},
   { path: 'portfolio-list', component: PortfolioPageComponent, data: { animation: 'portfolio'}},
   { path: 'portfolio-list/:_id', component: PortfolioDetailPageComponent},
+  { path: 'portfolio-list/:_id/gallery', component: GalleryComponent},
   { path: "**", component: PageNotFoundComponent} //<- This should always be the last route and should alway be at the end of the routes list
                                                   //Otherwise, will match with any link and display the 'Page Not Found' 
 ];

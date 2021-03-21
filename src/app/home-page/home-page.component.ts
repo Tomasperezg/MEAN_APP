@@ -10,7 +10,7 @@ export class HomePageComponent implements OnInit {
     {
       src: 'assets/Images/home-3bnr-1.jpg', 
       alt: 'Image 1', 
-      txt: 'Inspiration',
+      txt: 'Lorem ipsum',
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       linktxt: 'See portfolio',
       linkurl: '/portfolio-list'
@@ -18,13 +18,13 @@ export class HomePageComponent implements OnInit {
     {
       src: 'assets/Images/home-3bnr-2.jpg', 
       alt: 'Image 2', 
-      txt: 'Our History',
+      txt: 'Lorem ipsum',
       content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
       linktxt: 'Learn more about us',
       linkurl: '/about-us'
     },
     {
-      src: 'assets/Images/HomeHero.jpg', 
+      src: 'assets/Images/coming_soon.jpg', 
       alt: 'Image 3', 
       txt: 'Coming Soon',
       content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',

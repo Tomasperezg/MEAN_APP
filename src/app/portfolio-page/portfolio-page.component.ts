@@ -26,7 +26,6 @@ export class PortfolioPageComponent implements OnInit{
 
   constructor(private router: Router, private route: ActivatedRoute, private portfolioService: PortfolioService, public loaderService: LoaderService ){ }
 
-
   public portfolioList = []
   public error;
   public selectedId;
@@ -52,7 +51,7 @@ export class PortfolioPageComponent implements OnInit{
   isSelected(item){
     return item._id == this.selectedId;
   }
-
+  
   
 }
 

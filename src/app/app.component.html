@@ -12,10 +12,10 @@
           <a routerLink='home' routerLinkActive='active'>Home |</a>
       </li>
       <li>
-          <a routerLink='/about-us' routerLinkActive='active'>About Us |</a>
+          <a routerLink='/about-us' routerLinkActive='active'>About |</a>
       </li>
       <li>
-          <a routerLink='/contact-us' routerLinkActive='active'>Contact Us |</a>
+          <a routerLink='/contact-us' routerLinkActive='active'>Contact |</a>
       </li>
       <li>
           <a routerLink='/portfolio-list' routerLinkActive='active'>Portfolio</a>
@@ -28,10 +28,10 @@
         <a routerLink='home' routerLinkActive='active' (click)="isNavOpen()">Home </a>
     </li>
     <li>
-        <a routerLink='/about-us' routerLinkActive='active' (click)="isNavOpen()">About Us </a>
+        <a routerLink='/about-us' routerLinkActive='active' (click)="isNavOpen()">About</a>
     </li>
     <li>
-        <a routerLink='/contact-us' routerLinkActive='active' (click)="isNavOpen()">Contact Us </a>
+        <a routerLink='/contact-us' routerLinkActive='active' (click)="isNavOpen()">Contact </a>
     </li>
     <li>
         <a routerLink='/portfolio-list' routerLinkActive='active' (click)="isNavOpen()">Portfolio</a>
@@ -55,7 +55,7 @@
         <input placeholder="Email*" class="email_box" type="email" required name="userEmail" #userEmail="ngModel" [class.error]="userEmail.invalid && userEmail.touched" [(ngModel)]="userModel.userEmail" email="true">
         <p [class.error-msg]="userEmail.invalid && userEmail.touched" [class.error-msg2]="userEmail.valid || userEmail.untouched">Email is required</p>
         <div class="Button-Class">
-              <button [disabled]="userSignUp.form.invalid">Sign Up</button>
+              <button [disabled]="userSignUp.form.invalid">Subscribe</button>
         </div>
     </form>
     <p *ngIf="submitted && !errorMsg" class="success-msg">
