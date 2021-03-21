@@ -9,7 +9,7 @@ import { LoaderService } from '../loader/loader.service';
   providers: [ PortfolioService ]
 })
 export class GalleryComponent implements OnInit {
-
+  
   public portfolioList = []
   public portfolioId;
   public error;
@@ -28,5 +28,7 @@ export class GalleryComponent implements OnInit {
 
 
   }
+
+ 
 
 }

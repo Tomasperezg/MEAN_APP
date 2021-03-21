@@ -6,7 +6,7 @@
         <ul  @carouselSlide *ngFor="let img of portfolioList.gallery; index as i; let l = count; trackBy: trackByImg; let isLast = last;">
             <li *ngIf="i == currentImage">
                 
-                <img @carouselSlide src="{{img}}">
+                <img (click)="goToGallery()" @carouselSlide src="{{img}}">
                 <p class="carousel-count">{{i+1}} / {{l}}</p>
             </li>
             <div class="top-left"><a class="back" (click)="prevImage(currentImage , l)">‹</a></div>

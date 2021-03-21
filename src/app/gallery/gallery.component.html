@@ -1,3 +1,5 @@
+<div class="loader" *ngIf="loaderService.isLoading | async">
+</div>
 <div class="gallery-component">
     <ul *ngFor="let img of portfolioList.gallery">
         <img  src="{{img}}">

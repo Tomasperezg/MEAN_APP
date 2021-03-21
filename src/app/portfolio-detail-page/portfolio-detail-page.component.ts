@@ -14,7 +14,7 @@ import { accordionAnimation } from '../animations/accordion'
 })
 
 export class PortfolioDetailPageComponent implements OnInit {
-
+  public href: string = "";
   public portfolioList = []
   public portfolioId;
   public error;
@@ -76,5 +76,8 @@ export class PortfolioDetailPageComponent implements OnInit {
   gotoPortfolio(){
     let selectedId = this.portfolioId ? this.portfolioId : null;
     this.router.navigate(['../', {id: selectedId}], {relativeTo: this.route})
+  }
+  goToGallery(){
+    this.router.navigateByUrl(this.router.url+'/gallery')
   }
 }
