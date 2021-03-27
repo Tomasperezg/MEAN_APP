@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     padding-bottom: 25px;
-    img{
+    .image-banner{
+        background-image: url('/assets/Images/about_left_banner.jpg');
         height: 670px;
         width: 548px;
     }
@@ -25,10 +26,14 @@
 @media (min-width: 737px) and (max-width: 1024px){ 
    .contact-hro{
        flex-direction: column;
-       img{
-           width: 100%;
-           height: 100%;
-       }
+       .image-banner{
+        background-image: url('/assets/Images/about_left_banner_tablet.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+       height: 400px;
+    }
        .contact-hro-txt{
            width: 100%;
            height: 100%;
@@ -44,9 +49,13 @@
 @media (max-width: 736px){
     .contact-hro{
         flex-direction: column;
-        img{
-            width: 100%;
-            height: 100%;
+        .image-banner{
+            background-image: url('/assets/Images/about_left_banner.jpg');
+            background-size: cover;
+            position: relative;
+            background-position: top;
+            width: auto;
+            height: 400px;
         }
         .contact-hro-txt{
             height: 100%;
