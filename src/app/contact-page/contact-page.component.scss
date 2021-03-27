@@ -2,9 +2,13 @@
     display: flex;
     justify-content: center;
     padding-bottom: 25px;
-    img{
+    .image-banner{
+        background-image: url('/assets/Images/Hero_2.jpg');
         height: 670px;
-        width: 620px;
+        width: 548px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .contact-hro-txt{
         height: 670px;
@@ -106,13 +110,18 @@ textarea{
     .contact-hro{
         display: flex;
         flex-direction: column;
-        img{
-            display: none;
+        .image-banner{
+            background: none;
+            width: 0%;
+            height: 0%;
         }
         .contact-hro-txt{
             width: 100%;
             height: 100%;
         }
+    }
+    .Button-Class{
+        padding-right: 90px;
     }
     .errorRes{
         margin-top: 25%;
@@ -125,8 +134,11 @@ textarea{
     .contact-hro{
         display: flex;
         flex-direction: column;
-        img{
-            display: none;
+        text-align: left;
+        .image-banner{
+            background: none;
+            width: 0%;
+            height: 0%;
         }
         .contact-hro-txt{
             width: 100%;
@@ -137,6 +149,10 @@ textarea{
         div{
             width: 100%;
         }
+    }
+    .Button-Class{
+        text-align: center;
+        padding-right: 50px;
     }
     .errorRes{
         margin-top: 25%;

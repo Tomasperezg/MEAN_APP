@@ -29,6 +29,9 @@ export class GalleryComponent implements OnInit {
 
   }
 
- 
+  goback(){
+    let selectedId = this.portfolioId;
+    this.router.navigate(['../', {id: selectedId}], {relativeTo: this.route})
+  }
 
 }
