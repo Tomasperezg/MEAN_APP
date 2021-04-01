@@ -192,3 +192,10 @@ ul, li{
         right: 15px;
     }
 }
+// Iphone X Landscape
+@media (max-width: 812px) and (orientation : landscape) {
+    .container img{
+       width: 100%;
+       height: 365px;
+    }
+}

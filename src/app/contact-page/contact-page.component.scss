@@ -13,7 +13,7 @@
     .contact-hro-txt{
         height: 670px;
         width: 620px;
-       
+        background-color: floralwhite;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -24,9 +24,7 @@
 .form-container{
     display: flex;
     justify-content: center;
-    div{
-        width: 600px;
-    }
+   
 }
 
 .large_input{
@@ -34,6 +32,7 @@
     border-left-style: none;
     border-right-style: none;
     border-color: black;
+    background-color: floralwhite;
     border-bottom-style: solid;
     width: 90%;
     margin-bottom: 0px;
@@ -47,7 +46,8 @@ textarea{
     border-right-style: none;
     border-bottom-style: solid;
     border-bottom-color: black;
-    height: 80px;
+    background-color: floralwhite;
+    height: 70px;
     margin-top: 25px;
 }
 .Button-Class{
@@ -58,7 +58,7 @@ textarea{
 .Button-Class button{
     width: 160px;
     height: 40px;
-    background: white;
+    background: floralwhite;
     border-color: #2c2c2c;
     border-radius: 40px;
     color: #2c2c2c;

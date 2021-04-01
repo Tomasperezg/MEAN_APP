@@ -1,24 +1,5 @@
-<div class="loader" *ngIf="loaderService.isLoading | async">
-</div>
-<h3>{{portfolioList.Item_name}}</h3>
-<div class="carousel">
-    <div class="container">
-        <ul  @carouselSlide *ngFor="let img of portfolioList.gallery; index as i; let l = count; trackBy: trackByImg; let isLast = last;">
-            <li *ngIf="i == currentImage">
-                
-                <img @carouselSlide src="{{img}}">
-                <p class="carousel-count">{{i+1}} / {{l}}</p>
-            </li>
-            <button class="top-left"><a class="back" (click)="prevImage(currentImage , l)">‹</a></button>
-            <button class="top-right"><a class="next" (click)="nextImage(currentImage, l)">›</a></button>
-            <div class="expand_carousel_container">
-                    <img (click)="goToGallery()" class="expand_carousel" src="assets/Images/expand_icon_white.png" alt="expand carousel"/>
-                </div>
-        </ul>
-    </div>
-</div>
 
-
+<app-slider></app-slider>
 
 <p class="item-description">
     {{portfolioList.description}}

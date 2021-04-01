@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InterceptorService } from './loader/interceptor.service';
 import { GalleryComponent } from './gallery/gallery.component';
+import { SliderComponent } from './slider/slider.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    GalleryComponent
+    GalleryComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
