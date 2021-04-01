@@ -128,3 +128,10 @@ a {
         padding-left: 0px;
     }
 }
+// Iphone X Landscape
+@media (max-width: 812px) and (orientation : landscape) {
+    .Hero-Image img{
+        width: 100%;
+        height: 100%;
+    }
+}

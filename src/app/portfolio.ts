@@ -8,6 +8,6 @@ export interface Portfolio {
         bed_num: number,
         bath_num: number
     }],
-    gallery: []
+    gallery: string[];
 
 }
