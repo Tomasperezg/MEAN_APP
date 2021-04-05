@@ -1,18 +1,18 @@
-
 <div class="slider-container">
-    <div @carouselSlide class="slider-box" *ngFor="let img of portfolioList.gallery; index as i; first as isFirst; count as num">
+    <div @carouselSlide class="slider-box" *ngFor="let img of portfolioList.gallery; index as i; count as num">
         <div  *ngIf="i == currentImage">
             <p class="count">{{i + 1}} / {{portfolioList.gallery.length}}</p>
             <img  @carouselSlide src="{{img}}">
         </div>
     </div>
     <br/>
-    <p class="details-text">[this is a description]</p>
+    <!-- <p class="details-text">[this is a description]</p> -->
     <div class="button-container">
-        <button (click)="prevImage(currentImage)">&larr;</button>
+        <button (click)="prevImage(currentImage)">&#9668;</button>
         <button (click)="goToGallery()">Gallery</button>
-        <button (click)="nextImage(currentImage)">&rarr;</button>
+        <button (click)="nextImage(currentImage)">&#x25BA;</button>
     </div>
+   
     
 </div>
 
