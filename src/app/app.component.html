@@ -1,5 +1,6 @@
 <div class="burger-menu">
-    <div class="burger-menu-button" (click)="isNavOpen()">&#x2630;</div>
+    <div class="burger-menu-button" *ngIf="!navOpen" (click)="isNavOpen()">&#x2630;</div>
+    <div class="burger-menu-button" *ngIf="navOpen" (click)="isNavOpen()">&#10005;</div>
 </div>
 
 <div class="full-nav">
